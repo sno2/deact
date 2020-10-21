@@ -146,12 +146,12 @@ After running that code, the console will show the following:
 >    Type '{}' is missing the following properties from type 'Ref<any>': #value, #watchers, value, _watch
 >    console.log(isRef({}));
 >                      ~~
->    at file:///C:/Projects/deno/modules/deactivity/dev.ts:6:19
+>    at Deno.cwd()
 
 >  TS2345 [ERROR]: Argument of type 'number' is not assignable to parameter of type 'Ref<any>'.
 >    console.log(isRef(23));
 >                      ~~
->    at file:///C:/Projects/deno/modules/deactivity/dev.ts:7:19
+>    at Deno.cwd()
 
 >  Found 2 errors.
 ```
