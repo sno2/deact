@@ -11,7 +11,7 @@ This module is in development and is not recommended for production use. If you 
 First, install and setup Deno on your environment by [following their setup guide](https://deno.land/#installation). After that, you can import the deacivity module via the following code:
 
 ```ts
-import { ref } "https://deno.land/x/deact";
+import { ref } "https://deno.land/x/deact/mod.ts";
 ```
 
 Obviously, you should know what the above code does already before using a state management framework for Deno, so let's get started!
@@ -21,7 +21,7 @@ Obviously, you should know what the above code does already before using a state
 The `ref` is a function that creates a stateful object. That basically means that you can observe changes to `ref`s using functions. Here is a basic counter app with the module:
 
 ```ts
-import { ref } from "https://deno.land/x/deact";
+import { ref } from "https://deno.land/x/deact/mod.ts";
 
 const counter = ref(0); // initial value is `0`
 console.log(counter.value); // logs out `0`
@@ -32,7 +32,7 @@ As you can see, the value that you enter as a parameter for the `ref` function i
 Now, you may be remembering that we said above that this module is type-enforced, well let's just see what happens when we try to assign different types to our `counter` `ref`.
 
 ```ts
-import { ref } from "https://deno.land/x/deact";
+import { ref } from "https://deno.land/x/deact/mod.ts";
 
 const counter = ref(0); // value is implicitly a `number` type
 
@@ -55,7 +55,7 @@ After that last line, our console spits out the following error:
 As you can see, Typescript automatically infers the type of the `ref.value` via generics; therefore, you can also pass in the type of the `ref` with generics! I advise you to always keep a type variable for the type of your `ref`s, as it makes it a lot easier to edit and use the `ref` later. Here's a working counter that can be a `number` or `string`:
 
 ```ts
-import { ref } from "https://deno.land/x/deact";
+import { ref } from "https://deno.land/x/deact/mod.ts";
 
 type CounterType = number | string;
 const counter = ref<CounterType>(0); // value is explicitly a `number | string` type
@@ -71,7 +71,7 @@ console.log(counter.value); // logs out `"a string"`
 Now, our code is working beautifully and is perfectly typed! Now, let's actually get into the lifecycle hooks with deact! Currently, we only have one that is called `watch`; it runs a callback function with the old and new values of the given `ref` as parameters. Here is an example:
 
 ```ts
-import { ref, watch } from "https://deno.land/x/deact"; // note that we imported `watch`
+import { ref, watch } from "https://deno.land/x/deact/mod.ts"; // note that we imported `watch`
 
 type CounterType = number;
 const counter = ref<CounterType>(0);
@@ -90,7 +90,7 @@ counter.value = 23;
 After running the above code, the console will show `"The score went from 0 to 23 with a 23 point gain!"`. You're probably starting to understand the necessity of storing your types for `ref`s. Here is an example using an interval that increments `counter.value` by a random number between `5` and `20`:
 
 ```ts
-import { ref, watch } from "https://deno.land/x/deact";
+import { ref, watch } from "https://deno.land/x/deact/mod.ts";
 
 type CounterType = number;
 const counter = ref<CounterType>(0);
@@ -129,7 +129,7 @@ We now know all of the basic usage of the deact module, but wait! There's more! 
 What? You want an example? Ok, sure, here's how you can use it:
 
 ```ts
-import { ref, isRef } from "https://deno.land/x/deact";
+import { ref, isRef } from "https://deno.land/x/deact/mod.ts";
 
 type CounterType = number;
 const counter = ref<CounterType>(0);
