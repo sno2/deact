@@ -4,7 +4,7 @@ A type enforced Deno module for state management.
 
 ## Announcement
 
-This module is in development and is not recommended for production use. If you would like to contribute, then please make sure you clone the repo and have Prettier installed. Also, run `deno test` before submitting an PRs. Thank you!
+This module is in development and is not recommended for production use. If you would like to contribute, then please make sure you clone the repo and have Prettier installed. Also, run `deno test` before submitting an PRs. Furthermore, deact's behavior is much like to the Vue Composition API. Thank you!
 
 ## Getting Started
 
